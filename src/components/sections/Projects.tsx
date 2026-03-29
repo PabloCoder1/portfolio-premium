@@ -5,11 +5,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { projectsData } from '@/data/portfolio';
 import { GitBranch, ExternalLink, X } from 'lucide-react';
 import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
 
 // Tipagem básica baseada nos seus dados
-type Project = typeof projectsData[0];
+type Project = (typeof projectsData)[keyof typeof projectsData][number];
 
 export function Projects() {
+  const t = useTranslations('Projects');
+  const locale = useLocale() as 'pt' | 'en';
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   // Travar o scroll da página quando o modal estiver aberto (UX Sênior)
@@ -26,14 +29,15 @@ export function Projects() {
     <section id="projetos" className="w-full max-w-7xl px-6 py-24 mx-auto relative">
       <div className="mb-16 text-center">
         <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-          Meus Projetos
+          {t('title')}
         </h2>
         <div className="mx-auto mt-4 h-1 w-20 rounded bg-gradient-to-r from-purple-500 to-pink-500" />
       </div>
 
       {/* Grid de Cards Menores */}
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {projectsData.map((project, index) => (
+        {/* AQUI ESTÁ A MÁGICA: projectsData[locale].map */}
+        {projectsData[locale].map((project, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 30 }}
@@ -45,8 +49,10 @@ export function Projects() {
           >
             {/* Imagem do Card */}
             <div className="relative h-48 w-full overflow-hidden bg-gray-950">
-              <div className={`absolute inset-0 ${project.imageUrl} transition-transform duration-500 group-hover:scale-110`} />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80" />
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                style={{ backgroundImage: `url('${project.imageUrl}')` }}
+              />              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80" />
             </div>
 
             <div className="p-6">
@@ -58,7 +64,7 @@ export function Projects() {
                 {project.description}
               </p>
               <div className="mt-4 flex items-center text-sm font-semibold text-purple-400">
-                Ver detalhes <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
+                {t('viewDetails')} <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
               </div>
             </div>
           </motion.div>
@@ -97,8 +103,8 @@ export function Projects() {
 
                 {/* Área da Imagem do Modal (Maior) */}
                 <div className="relative h-64 w-full shrink-0 sm:h-80 bg-gray-900">
-                   <div className={`absolute inset-0 ${selectedProject.imageUrl}`} />
-                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent" />
+                  <div className={`absolute inset-0 ${selectedProject.imageUrl}`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent" />
                 </div>
 
                 {/* Conteúdo Rolável do Modal */}
@@ -106,13 +112,13 @@ export function Projects() {
                   <h3 className="mb-4 text-3xl font-extrabold text-white">
                     {selectedProject.title}
                   </h3>
-                  
+
                   <p className="mb-8 text-base leading-relaxed text-gray-300">
                     {selectedProject.description}
                   </p>
 
                   <div className="mb-8">
-                    <h4 className="mb-3 text-sm font-bold uppercase tracking-widest text-gray-500">Tecnologias Utilizadas</h4>
+                    <h4 className="mb-3 text-sm font-bold uppercase tracking-widest text-gray-500">{t('techUsed')}</h4>
                     <div className="flex flex-wrap gap-2">
                       {selectedProject.techs.map((tech) => (
                         <span key={tech} className="rounded-lg bg-gray-900 px-3 py-1.5 text-sm font-medium text-purple-400 border border-gray-800">
@@ -129,7 +135,7 @@ export function Projects() {
                       className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gray-900 py-3.5 text-sm font-bold text-white transition-all hover:bg-gray-800 hover:scale-[1.02]"
                     >
                       <GitBranch className="h-5 w-5" />
-                      Acessar Repositório
+                      {t('repoBtn')}
                     </Link>
                     <Link
                       href={selectedProject.liveUrl}
@@ -137,7 +143,7 @@ export function Projects() {
                       className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 py-3.5 text-sm font-bold text-white transition-all hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(168,85,247,0.4)]"
                     >
                       <ExternalLink className="h-5 w-5" />
-                      Projeto Online
+                      {t('liveBtn')}
                     </Link>
                   </div>
                 </div>

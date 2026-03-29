@@ -2,9 +2,11 @@
 
 import { useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Loader2, Mail, MessageCircle, GitBranch } from 'lucide-react';
+import { Send, Loader2, Mail, MessageCircle, GitBranch, ExternalLink } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export function Contact() {
+  const t = useTranslations('Contact');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -40,13 +42,13 @@ export function Contact() {
     <section id="contato" className="w-full max-w-6xl px-6 py-24 mx-auto">
       <div className="mb-16 text-center">
         <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-          Vamos criar algo <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">incrível</span> juntos!
+          {t('title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">{t('titleHighlight')}</span> {t('titleEnd')}
         </h2>
         <div className="mx-auto mt-4 h-1 w-20 rounded bg-gradient-to-r from-purple-500 to-pink-500" />
       </div>
 
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-8 items-start">
-        
+
         {/* Coluna da Esquerda: Cards de Contato Rápido */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -60,18 +62,30 @@ export function Contact() {
               <Mail className="h-6 w-6" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">Email</h3>
-              <p className="text-sm text-gray-400">seuemail@gmail.com</p>
+              <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">{t('emailTitle')}</h3>
+              <p className="text-sm text-gray-400">pablolimacoder@gmail.com</p>
             </div>
           </a>
 
-          <a href="https://wa.me/5511999999999" target="_blank" rel="noreferrer" className="group flex items-center gap-6 rounded-2xl border border-gray-800 bg-gray-900/40 p-6 transition-all hover:border-green-500/30 hover:bg-gray-900/80">
+          <a href="https://wa.me/5513991560814" target="_blank" rel="noreferrer" className="group flex items-center gap-6 rounded-2xl border border-gray-800 bg-gray-900/40 p-6 transition-all hover:border-green-500/30 hover:bg-gray-900/80">
             <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 text-white shadow-lg">
               <MessageCircle className="h-6 w-6" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-white group-hover:text-green-400 transition-colors">WhatsApp</h3>
-              <p className="text-sm text-gray-400">Ideal para networking rápido ou direcionar para o seu grupo focado em ofertas.</p>
+              <h3 className="text-lg font-bold text-white group-hover:text-green-400 transition-colors">{t('whatsappTitle')}</h3>
+              <p className="text-sm text-gray-400">{t('whatsappDesc')}</p>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/pablo-lima-aaba02269/" target="_blank" rel="noreferrer" className="group flex items-center gap-6 rounded-2xl border border-gray-800 bg-gray-900/40 p-6 transition-all hover:border-blue-500/50 hover:bg-gray-900/80 shadow-sm hover:shadow-blue-500/10">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-700 to-blue-900 text-white shadow-lg border border-blue-600/50">
+              <ExternalLink className="h-6 w-6" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
+                LinkedIn
+              </h3>
+              <p className="text-sm text-gray-400">linkedin.com/in/pablo-lima</p>
             </div>
           </a>
 
@@ -80,7 +94,7 @@ export function Contact() {
               <GitBranch className="h-6 w-6" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">GitHub</h3>
+              <h3 className="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">{t('githubTitle')}</h3>
               <p className="text-sm text-gray-400">github.com/PabloCoder1</p>
             </div>
           </a>
@@ -96,15 +110,15 @@ export function Contact() {
         >
           <form onSubmit={handleSubmit} className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
-              <label htmlFor="name" className="text-sm font-bold text-white">Nome *</label>
+              <label htmlFor="name" className="text-sm font-bold text-white">{t('formName')}</label>
               <input
                 type="text" id="name" name="name" required
                 className="rounded-xl border border-gray-800 bg-[#0A0A0A] px-4 py-4 text-white placeholder-gray-600 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all"
               />
             </div>
-            
+
             <div className="flex flex-col gap-2">
-              <label htmlFor="email" className="text-sm font-bold text-white">Email *</label>
+              <label htmlFor="email" className="text-sm font-bold text-white">{t('formEmail')}</label>
               <input
                 type="email" id="email" name="email" required
                 className="rounded-xl border border-gray-800 bg-[#0A0A0A] px-4 py-4 text-white placeholder-gray-600 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all"
@@ -112,7 +126,7 @@ export function Contact() {
             </div>
 
             <div className="flex flex-col gap-2">
-              <label htmlFor="message" className="text-sm font-bold text-white">Mensagem *</label>
+              <label htmlFor="message" className="text-sm font-bold text-white">{t('formMessage')}</label>
               <textarea
                 id="message" name="message" required rows={4}
                 className="resize-none rounded-xl border border-gray-800 bg-[#0A0A0A] px-4 py-4 text-white placeholder-gray-600 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all"
@@ -123,14 +137,14 @@ export function Contact() {
               type="submit" disabled={isSubmitting}
               className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-500 to-pink-600 py-4 font-bold text-white transition-all hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] disabled:opacity-70 disabled:hover:scale-100"
             >
-              {isSubmitting ? <Loader2 className="h-5 w-5 animate-spin" /> : 'Enviar'}
+              {isSubmitting ? <Loader2 className="h-5 w-5 animate-spin" /> : t('formSubmit')}
             </button>
 
             {status === 'success' && (
-              <p className="text-center text-sm font-medium text-green-400 mt-2">Mensagem enviada com sucesso!</p>
+              <p className="text-center text-sm font-medium text-green-400 mt-2">{t('formSuccess')}</p>
             )}
             {status === 'error' && (
-              <p className="text-center text-sm font-medium text-red-400 mt-2">Erro ao enviar. Tente novamente.</p>
+              <p className="text-center text-sm font-medium text-red-400 mt-2">{t('formError')}</p>
             )}
           </form>
         </motion.div>

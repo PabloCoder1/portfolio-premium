@@ -2,19 +2,24 @@
 
 import { motion } from 'framer-motion';
 import { skillsData } from '@/data/portfolio';
+import { useTranslations, useLocale } from 'next-intl';
 
 export function Skills() {
+  const t = useTranslations('Skills'); // Hook apontando para o bloco Skills
+  const locale = useLocale() as 'pt' | 'en';
+
   return (
     <section id="habilidades" className="w-full max-w-6xl px-6 py-24 mx-auto">
       <div className="mb-16 text-center">
         <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-          Minhas Habilidades
+          {t('title')} {/* Substituído: Minhas Habilidades */}
         </h2>
         <div className="mx-auto mt-4 h-1 w-20 rounded bg-gradient-to-r from-purple-500 to-pink-500" />
       </div>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        {skillsData.map((category, index) => (
+        {/* AQUI ESTÁ A MÁGICA: skillsData[locale].map */}
+        {skillsData[locale].map((category, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}

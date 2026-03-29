@@ -8,18 +8,20 @@ import { useState } from 'react';
 import { ChevronDown, Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-// 🚀 Agora a Navbar recebe o locale direto do servidor (seguro e imutável)
 export function Navbar({ locale }: { locale: string }) {
   const t = useTranslations('Navbar');
   const router = useRouter();
   const pathname = usePathname();
   const [isLangOpen, setIsLangOpen] = useState(false);
 
+  // 🚀 Adicionamos Experience e Education na lista de links
   const navLinks = [
     { name: t('home'), href: `/${locale}#` },
     { name: t('about'), href: `/${locale}#sobre` },
     { name: t('skills'), href: `/${locale}#habilidades` },
     { name: t('projects'), href: `/${locale}#projetos` },
+    { name: t('experience'), href: `/${locale}#experiencia` },
+    { name: t('education'), href: `/${locale}#formacao` },
     { name: t('contact'), href: `/${locale}#contato` },
   ];
 
@@ -48,8 +50,8 @@ export function Navbar({ locale }: { locale: string }) {
         </Link>
 
         <div className="flex items-center gap-8">
-          {/* Esconde os links no mobile por enquanto para ficar limpo */}
-          <div className="hidden items-center gap-6 md:flex">
+          {/* Links para Desktop */}
+          <div className="hidden items-center gap-6 lg:flex">
             {navLinks.map((link) => (
               <a
                 key={link.name}

@@ -4,6 +4,7 @@ import { Experience } from "@/components/sections/Experience";
 import { Projects } from "@/components/sections/Projects";
 import { Contact } from "@/components/sections/Contact"; // Novo import
 import { About } from "@/components/sections/About";
+import { Education } from "@/components/sections/Education";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <About />
       <Skills />
       <Experience />
+      <Education />
       <Projects />
       <Contact /> {/* Adicionado aqui */}
     </main>

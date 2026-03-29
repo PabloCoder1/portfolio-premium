@@ -4,10 +4,12 @@
     "about": "About",
     "skills": "Skills",
     "projects": "Projects",
+    "experience": "Experience",
+    "education": "Education",
     "contact": "Contact"
   },
   "Hero": {
-    "badge": "Senior Software Engineer",
+    "badge": "Solutions Architect & RPA Specialist",
     "greeting": "Hello, I'm",
     "description": "Passionate about building scalable systems, automating complex workflows with RPA, and turning ideas into high-impact digital experiences.",
     "btnProjects": "View Projects",
@@ -15,7 +17,7 @@
   },
   "About": {
     "title": "About Me",
-    "card1Title": "Full Stack Engineering",
+    "card1Title": "Solutions Architect & RPA Specialist",
     "card1Desc": "End-to-end scalable web system development. Specialist in the JavaScript/TypeScript ecosystem (React, Next.js, Node.js), creating everything from modern, optimized user interfaces to secure, high-performance RESTful APIs.",
     "card2Title": "Automation & RPA",
     "card2Desc": "Strong experience in reducing operational tasks through intelligent automations. Development of corporate bots, web scraping with Python, and workflows with Power Platform and Copado, focusing on optimizing business time and resources.",
@@ -50,5 +52,13 @@
   },
   "Footer": {
     "rights": "All rights reserved."
+  },
+  "Experience": {
+    "badge": "Professional Journey",
+    "title": "Where I Left My Mark"
+  },
+  "Education": {
+    "badge": "Academic Background",
+    "title": "My Studies & Certifications"
   }
 }

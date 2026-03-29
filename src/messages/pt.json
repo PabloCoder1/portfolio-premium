@@ -4,10 +4,12 @@
     "about": "Sobre",
     "skills": "Habilidades",
     "projects": "Projetos",
+    "experience": "Experiência",
+    "education": "Formação",
     "contact": "Contato"
   },
   "Hero": {
-    "badge": "Engenheiro de Software Sênior",
+    "badge": "Arquiteto de Soluções e Automação",
     "greeting": "Olá, eu sou",
     "description": "Apaixonado por criar sistemas escaláveis, automatizar fluxos complexos com RPA e transformar ideias em experiências digitais de alto impacto.",
     "btnProjects": "Ver Projetos",
@@ -15,7 +17,7 @@
   },
   "About": {
     "title": "Sobre Mim",
-    "card1Title": "Engenharia Full Stack",
+    "card1Title": "Arquiteto de Soluções e Automação",
     "card1Desc": "Atuação de ponta a ponta no desenvolvimento de sistemas web escaláveis. Especialista no ecossistema JavaScript/TypeScript (React, Next.js, Node.js), criando desde interfaces modernas e otimizadas para o utilizador final até APIs RESTful seguras e performáticas.",
     "card2Title": "Automação & RPA",
     "card2Desc": "Forte vivência na redução de tarefas operacionais através de automações inteligentes. Desenvolvimento de bots corporativos, web scraping com Python e fluxos com Power Platform e Copado, focando na otimização de tempo e recursos empresariais.",
@@ -50,5 +52,13 @@
   },
   "Footer": {
     "rights": "Todos os direitos reservados."
+  },
+  "Experience": {
+    "badge": "Trajetória Profissional",
+    "title": "Onde Deixei Minha Marca"
+  },
+  "Education": {
+    "badge": "Formação Acadêmica",
+    "title": "Meus Estudos e Especializações"
   }
 }

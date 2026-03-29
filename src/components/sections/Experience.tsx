@@ -3,21 +3,27 @@
 import { motion } from 'framer-motion';
 import { experiencesData } from '@/data/portfolio';
 import { CalendarDays, BriefcaseBusiness } from 'lucide-react';
+import { useTranslations, useLocale } from 'next-intl';
 
 export function Experience() {
+  const t = useTranslations('Experience'); 
+  const locale = useLocale() as 'pt' | 'en';
+
   return (
-    <section id="experiencia" className="w-full max-w-5xl px-6 py-24 sm:py-32">
+    <section id="experiencia" className="w-full max-w-5xl px-6 py-24 sm:py-32 mx-auto">
       <div className="mb-16 text-center">
         <h2 className="text-sm font-semibold uppercase tracking-widest text-purple-400">
-          Trajetória Profissional
+          {t('badge')}
         </h2>
         <p className="mt-2 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-          Onde Deixei Minha Marca
+          {t('title')}
         </p>
       </div>
 
-      <div className="relative space-y-12 before:absolute before:inset-y-0 before:left-4 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-purple-500 before:to-blue-500 sm:before:left-1/2 sm:before:-translate-x-1/2">
-        {experiencesData.map((exp, index) => {
+      {/* 🚀 AQUI ESTÁ A CORREÇÃO: Adicionado o before:content-[''] para desenhar a linha! */}
+      <div className="relative space-y-12 before:absolute before:inset-y-0 before:left-4 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-purple-500 before:to-blue-500 before:content-[''] sm:before:left-1/2 sm:before:-translate-x-1/2">
+        {/* Lendo a experiência baseada no idioma selecionado */}
+        {experiencesData[locale].map((exp, index) => {
           const isEven = index % 2 === 0;
           return (
             <motion.div
