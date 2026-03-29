@@ -3,24 +3,44 @@ import { BrainCircuit, CodeXml, Database, Zap, Bot, Target } from 'lucide-react'
 
 export const skillsData = [
   {
-    category: 'Frontend',
+    category: 'Desenvolvimento Frontend',
     icon: CodeXml,
-    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'UI/UX Moderna'],
+    skills: [
+      { name: 'React / Next.js', level: 90 },
+      { name: 'JavaScript / TypeScript', level: 85 },
+      { name: 'Tailwind CSS', level: 95 },
+      { name: 'UI/UX Moderna', level: 80 },
+    ],
   },
   {
-    category: 'Backend & Core',
+    category: 'Backend & Database',
     icon: Database,
-    skills: ['Node.js', 'API RESTful', 'Python', 'Clean Code', 'Arquitetura de Sistemas'],
+    skills: [
+      { name: 'Node.js', level: 85 },
+      { name: 'Python', level: 80 },
+      { name: 'APIs RESTful', level: 90 },
+      { name: 'SQL / Bancos Relacionais', level: 80 },
+    ],
   },
   {
     category: 'Automação & Processos',
     icon: Bot,
-    skills: ['RPA', 'Web Scraping', 'Bots de Chat', 'Workflow Automation', 'Análise de Sistemas'],
+    skills: [
+      { name: 'RPA / Web Scraping', level: 95 },
+      { name: 'Power Platform', level: 85 },
+      { name: 'Criação de Bots', level: 90 },
+      { name: 'Análise de Sistemas', level: 88 },
+    ],
   },
   {
-    category: 'Ferramentas & Metodologias',
+    category: 'Outras Ferramentas',
     icon: Target,
-    skills: ['Jira', 'Copado (CI/CD)', 'Git/GitHub', 'Agile/Scrum', 'DevOps Básico'],
+    skills: [
+      { name: 'Git / GitHub', level: 90 },
+      { name: 'Copado (CI/CD)', level: 80 },
+      { name: 'Jira / Scrum', level: 85 },
+      { name: 'Framer Motion', level: 75 },
+    ],
   },
 ];
 

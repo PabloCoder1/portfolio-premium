@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { projectsData } from '@/data/portfolio';
 import { GitBranch, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function Projects() {
   return (
@@ -27,11 +28,22 @@ export function Projects() {
             transition={{ duration: 0.5, delay: index * 0.15 }}
             className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all hover:border-purple-500/50 hover:shadow-[0_0_30px_-5px_rgba(139,92,246,0.15)]"
           >
-            {/* Placeholder de Imagem com efeito de Zoom no Hover */}
-            <div className={`h-48 w-full ${project.imageUrl} transition-transform duration-500 group-hover:scale-105`} />
+            {/* Imagem Otimizada com Next/Image */}
+            <div className="relative h-48 w-full overflow-hidden bg-gray-900">
+              {/* Fallback de cor caso a imagem não exista (pode remover depois) */}
+              <div className={`absolute inset-0 ${project.imageUrl}`} />
+              
+              {/* Descomente a tag abaixo quando tiver as imagens reais na pasta public */}
+              {/* <Image 
+                src={`/${project.imageName}`} 
+                alt={project.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              /> */}
+            </div>
             
-            {/* Gradiente de overlay na imagem para o texto não sumir */}
-            <div className="absolute top-0 h-48 w-full bg-gradient-to-b from-transparent to-gray-900/90" />
+            {/* Gradiente de overlay na imagem para suavizar a transição */}
+            <div className="absolute top-0 h-48 w-full bg-gradient-to-b from-transparent to-gray-900/90 z-0" />
 
             <div className="flex flex-1 flex-col p-6 relative z-10">
               <h3 className="mb-2 text-2xl font-bold text-white group-hover:text-purple-300 transition-colors">
