@@ -184,7 +184,7 @@ export const projectsData = {
       description: 'Premium, responsive, and local SEO-optimized landing page, designed to generate leads and WhatsApp appointments for advanced stretch mark removal services in Santos, SP.',
       techs: ['Next.js 14', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vercel', 'Git'],
       githubUrl: '#',
-      liveUrl: 'tl-estetica-landing.vercel.app',
+      liveUrl: 'https://tl-estetica-landing.vercel.app/',
       imageUrl: '/thuany-lima-lp.jpg',
     }
   ]
