@@ -1,3 +1,4 @@
+// src/components/sections/Projects.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -14,6 +15,8 @@ export function Projects() {
   const t = useTranslations('Projects');
   const locale = useLocale() as 'pt' | 'en';
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const isImagePath = (value: string) => value.startsWith('/') || value.startsWith('http');
 
   // Travar o scroll da página quando o modal estiver aberto (UX Sênior)
   useEffect(() => {
@@ -36,7 +39,6 @@ export function Projects() {
 
       {/* Grid de Cards Menores */}
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {/* AQUI ESTÁ A MÁGICA: projectsData[locale].map */}
         {projectsData[locale].map((project, index) => (
           <motion.div
             key={index}
@@ -47,12 +49,20 @@ export function Projects() {
             onClick={() => setSelectedProject(project)}
             className="group cursor-pointer overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/40 transition-all hover:border-purple-500/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)]"
           >
-            {/* Imagem do Card */}
+            {/* 🚀 NOVA ÁREA DA IMAGEM DO CARD */}
             <div className="relative h-48 w-full overflow-hidden bg-gray-950">
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                style={{ backgroundImage: `url('${project.imageUrl}')` }}
-              />              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80" />
+              {isImagePath(project.imageUrl) ? (
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                  style={{ backgroundImage: `url(${project.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                />
+              ) : (
+                <div
+                  className={`absolute inset-0 ${project.imageUrl} transition-transform duration-500 group-hover:scale-110`}
+                />
+              )}
+              {/* Overlay de gradiente para garantir a legibilidade do texto abaixo */}
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80" />
             </div>
 
             <div className="p-6">
@@ -101,10 +111,19 @@ export function Projects() {
                   <X className="h-5 w-5" />
                 </button>
 
-                {/* Área da Imagem do Modal (Maior) */}
+                {/* 🚀 ÁREA DA IMAGEM DO MODAL (MAIOR) */}
                 <div className="relative h-64 w-full shrink-0 sm:h-80 bg-gray-900">
-                  <div className={`absolute inset-0 ${selectedProject.imageUrl}`} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent" />
+                   {isImagePath(selectedProject.imageUrl) ? (
+                  <div
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${selectedProject.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                  />
+                ) : (
+                  <div
+                    className={`absolute inset-0 ${selectedProject.imageUrl}`}
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent" />
                 </div>
 
                 {/* Conteúdo Rolável do Modal */}
@@ -112,7 +131,7 @@ export function Projects() {
                   <h3 className="mb-4 text-3xl font-extrabold text-white">
                     {selectedProject.title}
                   </h3>
-
+                  
                   <p className="mb-8 text-base leading-relaxed text-gray-300">
                     {selectedProject.description}
                   </p>

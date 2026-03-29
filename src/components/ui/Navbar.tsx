@@ -45,7 +45,7 @@ export function Navbar({ locale }: { locale: string }) {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link href={`/${locale}#`} className="flex items-center gap-2 text-xl font-bold text-white">
           <span className="text-purple-400">{'{'}</span>
-          pablo lima
+          portfolio-premium
           <span className="text-purple-400">{'}'}</span>
         </Link>
 
