@@ -142,6 +142,14 @@ export const projectsData = {
       githubUrl: '#',
       liveUrl: '#',
       imageUrl: 'bg-gradient-to-br from-gray-800 to-gray-900',
+    },
+    {
+      title: 'Thuany Lima: Landing Page de Alta Conversão para Estética',
+      description: 'Landing page premium, responsiva e otimizada para SEO local, projetada para gerar leads e agendamentos via WhatsApp para serviços avançados de remoção de estrias em Santos, SP.',
+      techs: ['Next.js 14', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vercel', 'Git'],
+      githubUrl: 'https://github.com/PabloCoder1/tl-estetica-landing',
+      liveUrl: 'https://tl-estetica-landing.vercel.app/',
+      imageUrl: '/thuany-lima-lp.jpg', // Esta é a referência para a imagem gerada
     }
   ],
   en: [
@@ -170,6 +178,14 @@ export const projectsData = {
       githubUrl: '#',
       liveUrl: '#',
       imageUrl: 'bg-gradient-to-br from-gray-800 to-gray-900',
+    },
+    {
+      title: 'Thuany Lima: High-Conversion Aesthetic Landing Page',
+      description: 'Premium, responsive, and local SEO-optimized landing page, designed to generate leads and WhatsApp appointments for advanced stretch mark removal services in Santos, SP.',
+      techs: ['Next.js 14', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vercel', 'Git'],
+      githubUrl: '#',
+      liveUrl: 'tl-estetica-landing.vercel.app',
+      imageUrl: '/thuany-lima-lp.jpg',
     }
   ]
 
