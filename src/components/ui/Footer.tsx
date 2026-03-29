@@ -24,7 +24,7 @@ export function Footer() {
             <GitBranch className="h-5 w-5" />
           </Link>
           <Link
-            href="#"
+            href="https://www.linkedin.com/in/pablo-lima-aaba02269/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
