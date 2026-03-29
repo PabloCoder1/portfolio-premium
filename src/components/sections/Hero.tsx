@@ -51,7 +51,7 @@ export function Hero() {
               <Terminal className="h-4 w-4" />
             </Link>
             <a
-              href="/seu-curriculo.pdf" // Mude para o link real do seu CV
+              href="/Pablo Lima dos santos.pdf" // Mude para o link real do seu CV
               download
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-purple-500/30 bg-gray-900/50 px-8 py-3.5 text-sm font-semibold text-gray-300 transition-all hover:border-purple-500 hover:bg-gray-800 hover:text-white"
             >
