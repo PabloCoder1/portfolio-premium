@@ -4,7 +4,51 @@
     "about": "Sobre",
     "skills": "Habilidades",
     "projects": "Projetos",
-    "experience": "Experiência",
     "contact": "Contato"
+  },
+  "Hero": {
+    "badge": "Engenheiro de Software Sênior",
+    "greeting": "Olá, eu sou",
+    "description": "Apaixonado por criar sistemas escaláveis, automatizar fluxos complexos com RPA e transformar ideias em experiências digitais de alto impacto.",
+    "btnProjects": "Ver Projetos",
+    "btnCV": "Download CV"
+  },
+  "About": {
+    "title": "Sobre Mim",
+    "card1Title": "Engenharia Full Stack",
+    "card1Desc": "Atuação de ponta a ponta no desenvolvimento de sistemas web escaláveis. Especialista no ecossistema JavaScript/TypeScript (React, Next.js, Node.js), criando desde interfaces modernas e otimizadas para o utilizador final até APIs RESTful seguras e performáticas.",
+    "card2Title": "Automação & RPA",
+    "card2Desc": "Forte vivência na redução de tarefas operacionais através de automações inteligentes. Desenvolvimento de bots corporativos, web scraping com Python e fluxos com Power Platform e Copado, focando na otimização de tempo e recursos empresariais.",
+    "stat1": "Anos de Experiência",
+    "stat2": "Projetos Concluídos",
+    "stat3": "Foco em Solução"
+  },
+  "Skills": {
+    "title": "Minhas Habilidades"
+  },
+  "Projects": {
+    "title": "Meus Projetos",
+    "viewDetails": "Ver detalhes",
+    "techUsed": "Tecnologias Utilizadas",
+    "repoBtn": "Acessar Repositório",
+    "liveBtn": "Projeto Online"
+  },
+  "Contact": {
+    "title": "Vamos criar algo",
+    "titleHighlight": "incrível",
+    "titleEnd": "juntos!",
+    "emailTitle": "Email",
+    "whatsappTitle": "WhatsApp",
+    "whatsappDesc": "Ideal para networking rápido ou direcionar para o seu grupo focado em ofertas.",
+    "githubTitle": "GitHub",
+    "formName": "Nome *",
+    "formEmail": "Email *",
+    "formMessage": "Mensagem *",
+    "formSubmit": "Enviar",
+    "formSuccess": "Mensagem enviada com sucesso!",
+    "formError": "Erro ao enviar. Tente novamente."
+  },
+  "Footer": {
+    "rights": "Todos os direitos reservados."
   }
 }

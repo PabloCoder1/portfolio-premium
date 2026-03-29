@@ -1,39 +1,46 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../globals.css"; // Volta uma pasta para achar o CSS global
+import "../globals.css";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/ui/Footer";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+
+// 🚀 IMPORTAÇÃO ESTÁTICA: O Turbopack não vai mais engasgar na transição
+import ptMessages from '../../messages/pt.json';
+import enMessages from '../../messages/en.json';
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Pablo Lima | Engenheiro de Software Sênior",
-  description: "Portfólio de Pablo Lima. Especialista em desenvolvimento Full Stack, sistemas escaláveis e automação de processos (RPA).",
+  description: "Portfólio de Pablo Lima. Especialista em desenvolvimento Full Stack e RPA.",
 };
 
 export default async function RootLayout({
   children,
-  params,
+  params
 }: Readonly<{
   children: React.ReactNode;
+  // No Next 16, os parâmetros de rota dinâmica são Promises
   params: Promise<{ locale: string }>;
 }>) {
-  const { locale } = await params;
-
-  // Busca o JSON de idiomas no servidor
-  const messages = await getMessages();
+  
+  // Aguardamos a Promise resolver (Obrigatório no Next.js 15+)
+  const resolvedParams = await params;
+  const locale = resolvedParams.locale;
+  
+  // Seleciona o JSON correto instantaneamente
+  const messages = locale === 'en' ? enMessages : ptMessages;
 
   return (
     <html lang={locale} className="scroll-smooth">
       <body className={cn(inter.className, "min-h-screen bg-[#0A0A0A] font-sans antialiased text-gray-200")}>
-        <NextIntlClientProvider messages={messages}>
-          <Navbar />
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          {/* Passamos o locale via prop para a Navbar não depender de hooks que perdem contexto */}
+          <Navbar locale={locale} />
           
-          {/* Adicionamos pt-24 para o conteúdo não ficar escondido atrás da Navbar fixa */}
           <main className="flex min-h-screen flex-col pt-24">
             {children}
           </main>

@@ -1,14 +1,8 @@
-// next.config.js
-const withNextIntl = require('next-intl/plugin')();
- 
-module.exports = withNextIntl({
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'api.dicebear.com',
-        pathname: '/**',
-      },
-    ],
-  },
-});
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin();
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+
+export default withNextIntl(nextConfig);

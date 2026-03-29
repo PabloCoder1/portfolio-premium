@@ -1,37 +1,32 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useState } from 'react';
 import { ChevronDown, Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-export function Navbar() {
+// 🚀 Agora a Navbar recebe o locale direto do servidor (seguro e imutável)
+export function Navbar({ locale }: { locale: string }) {
   const t = useTranslations('Navbar');
-  const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const [isLangOpen, setIsLangOpen] = useState(false);
 
   const navLinks = [
-    { name: t('home'), href: '#' },
-    { name: t('about'), href: '#sobre' },
-    { name: t('skills'), href: '#habilidades' },
-    { name: t('projects'), href: '#projetos' },
-    { name: t('experience'), href: '#experiencia' },
-    { name: t('contact'), href: '#contato' },
+    { name: t('home'), href: `/${locale}#` },
+    { name: t('about'), href: `/${locale}#sobre` },
+    { name: t('skills'), href: `/${locale}#habilidades` },
+    { name: t('projects'), href: `/${locale}#projetos` },
+    { name: t('contact'), href: `/${locale}#contato` },
   ];
 
   const handleLanguageChange = (newLocale: string) => {
-    const currentPath = pathname || '/';
-    const currentPrefix = `/${locale}`;
-    const pathWithoutLocale = currentPath.startsWith(currentPrefix)
-      ? currentPath.slice(currentPrefix.length) || '/'
-      : currentPath;
-
-    router.replace(`/${newLocale}${pathWithoutLocale}`);
+    if (locale === newLocale) return; 
+    const newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
+    router.push(newPath);
     setIsLangOpen(false);
   };
 
@@ -46,16 +41,15 @@ export function Navbar() {
       className="fixed top-0 left-0 z-50 w-full border-b border-gray-800 bg-[#0A0A0A]/80 backdrop-blur-sm"
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        {/* Logo (Inspirado em image_1.png/image_2.png) */}
-        <Link href="#" className="flex items-center gap-2 text-xl font-bold text-white">
+        <Link href={`/${locale}#`} className="flex items-center gap-2 text-xl font-bold text-white">
           <span className="text-purple-400">{'{'}</span>
           pablo lima
           <span className="text-purple-400">{'}'}</span>
         </Link>
 
-        {/* Links de Navegação */}
         <div className="flex items-center gap-8">
-          <div className="flex items-center gap-6">
+          {/* Esconde os links no mobile por enquanto para ficar limpo */}
+          <div className="hidden items-center gap-6 md:flex">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -68,7 +62,6 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Botão de Idioma (Inspirado em image_1.png/image_2.png) */}
           <div className="relative">
             <button
               onClick={() => setIsLangOpen(!isLangOpen)}
@@ -79,6 +72,7 @@ export function Navbar() {
               {currentLangName}
               <ChevronDown className={cn("h-4 w-4 transition-transform", isLangOpen ? "rotate-180" : "")} />
             </button>
+            
             {isLangOpen && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}

@@ -4,7 +4,51 @@
     "about": "About",
     "skills": "Skills",
     "projects": "Projects",
-    "experience": "Experience",
     "contact": "Contact"
+  },
+  "Hero": {
+    "badge": "Senior Software Engineer",
+    "greeting": "Hello, I'm",
+    "description": "Passionate about building scalable systems, automating complex workflows with RPA, and turning ideas into high-impact digital experiences.",
+    "btnProjects": "View Projects",
+    "btnCV": "Download Resume"
+  },
+  "About": {
+    "title": "About Me",
+    "card1Title": "Full Stack Engineering",
+    "card1Desc": "End-to-end scalable web system development. Specialist in the JavaScript/TypeScript ecosystem (React, Next.js, Node.js), creating everything from modern, optimized user interfaces to secure, high-performance RESTful APIs.",
+    "card2Title": "Automation & RPA",
+    "card2Desc": "Strong experience in reducing operational tasks through intelligent automations. Development of corporate bots, web scraping with Python, and workflows with Power Platform and Copado, focusing on optimizing business time and resources.",
+    "stat1": "Years of Experience",
+    "stat2": "Completed Projects",
+    "stat3": "Focus on Solutions"
+  },
+  "Skills": {
+    "title": "My Skills"
+  },
+  "Projects": {
+    "title": "My Projects",
+    "viewDetails": "View details",
+    "techUsed": "Technologies Used",
+    "repoBtn": "View Repository",
+    "liveBtn": "Live Project"
+  },
+  "Contact": {
+    "title": "Let's build something",
+    "titleHighlight": "amazing",
+    "titleEnd": "together!",
+    "emailTitle": "Email",
+    "whatsappTitle": "WhatsApp",
+    "whatsappDesc": "Ideal for quick networking or directing to your discount offers group.",
+    "githubTitle": "GitHub",
+    "formName": "Name *",
+    "formEmail": "Email *",
+    "formMessage": "Message *",
+    "formSubmit": "Send",
+    "formSuccess": "Message sent successfully!",
+    "formError": "Error sending message. Please try again."
+  },
+  "Footer": {
+    "rights": "All rights reserved."
   }
 }
