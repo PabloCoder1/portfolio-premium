@@ -16,7 +16,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.05)_0,transparent_60%)]" />
 
       <div className="z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-8">
-        
+
         {/* Coluna da Esquerda: Texto */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -32,7 +32,7 @@ export function Hero() {
           </div>
 
           <h1 className="mb-4 text-5xl font-extrabold tracking-tight sm:text-7xl text-white">
-            {t('greeting')} <br /> 
+            {t('greeting')} <br />
             <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
               Pablo Lima
             </span>
@@ -71,12 +71,12 @@ export function Hero() {
           <div className="relative h-72 w-72 sm:h-96 sm:w-96">
             {/* Círculo decorativo de fundo animado */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-600 to-pink-600 opacity-20 blur-3xl animate-pulse" />
-            
+
             {/* Borda da foto */}
             <div className="absolute inset-0 rounded-full border-2 border-purple-500/50 p-2">
               <div className="relative h-full w-full overflow-hidden rounded-full bg-gray-900">
                 <Image
-                  src="/IMG_0037.PNG"
+                  src="/img_0037.png" // Mantenha exatamente como está na pasta public
                   alt="Foto de Pablo Lima"
                   fill
                   className="object-cover"
@@ -85,15 +85,15 @@ export function Hero() {
             </div>
 
             {/* Elementos flutuantes */}
-            <motion.div 
-              animate={{ y: [-10, 10, -10] }} 
+            <motion.div
+              animate={{ y: [-10, 10, -10] }}
               transition={{ repeat: Infinity, duration: 4 }}
               className="absolute -left-6 top-10 rounded-xl border border-gray-800 bg-gray-900/80 p-3 backdrop-blur-sm"
             >
               <span className="text-2xl">🚀</span>
             </motion.div>
-            <motion.div 
-              animate={{ y: [10, -10, 10] }} 
+            <motion.div
+              animate={{ y: [10, -10, 10] }}
               transition={{ repeat: Infinity, duration: 5 }}
               className="absolute -right-4 bottom-20 rounded-xl border border-gray-800 bg-gray-900/80 p-3 backdrop-blur-sm"
             >
