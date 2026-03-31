@@ -76,10 +76,11 @@ export function Hero() {
             <div className="absolute inset-0 rounded-full border-2 border-purple-500/50 p-2">
               <div className="relative h-full w-full overflow-hidden rounded-full bg-gray-900">
                 <Image
-                  src="/img_0037.png" // Mantenha exatamente como está na pasta public
+                  src="/pablo-perfil.png"
                   alt="Foto de Pablo Lima"
                   fill
                   className="object-cover"
+                  priority // Adicione isso para carregar mais rápido no Hero
                 />
               </div>
             </div>
