@@ -76,7 +76,7 @@ export function Hero() {
             <div className="absolute inset-0 rounded-full border-2 border-purple-500/50 p-2">
               <div className="relative h-full w-full overflow-hidden rounded-full bg-gray-900">
                 <Image
-                  src="/IMG_0037.JPEG"
+                  src="/IMG_0037.PNG"
                   alt="Foto de Pablo Lima"
                   fill
                   className="object-cover"
