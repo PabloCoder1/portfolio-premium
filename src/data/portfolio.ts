@@ -151,6 +151,23 @@ export const projectsData = {
       liveUrl: 'https://tl-estetica-landing.vercel.app/',
       imageUrl: '/thuany-lima-lp.jpg', // Esta é a referência para a imagem gerada
     }
+    ,
+    {
+      title: 'AutoApply-LinkedIn: Hiperautomação de Candidaturas com IA',
+      description: 'Sistema avançado de RPA que automatiza candidaturas no LinkedIn usando um motor de decisão de 5 camadas (Heurística Local + IA). Inclui persistência em SQLite para evitar duplicidade, bypass de detecção de bots e notificações em tempo real via Telegram.',
+      techs: ['Python', 'Playwright', 'Gemini AI', 'SQLite', 'Stealth', 'Telegram API', 'Git'],
+      githubUrl: 'https://github.com/PabloCoder1/AutoApply-LinkedIn',
+      liveUrl: '', // Como é um bot de automação, você pode deixar vazio ou apontar para um vídeo de demonstração
+      imageUrl: '/autoapply-bot-preview.png',
+    },
+    {
+      title: 'BarberPro: SaaS e PWA para Gestão de Barbearias',
+      description: 'Plataforma full-stack projetada para digitalizar o agendamento e a gestão de barbearias. Inclui painel financeiro, sistema de controle de acesso (RBAC), exclusão inteligente com redistribuição de clientes, autenticação via Google e suporte a instalação mobile (PWA).',
+      techs: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Prisma ORM', 'Supabase', 'NextAuth', 'Vercel'],
+      githubUrl: 'https://github.com/PabloCoder1/barber-saas', // Confirme se o nome do repositório é este mesmo
+      liveUrl: 'https://barber-saas-gamma.vercel.app/', // Substitua pelo link real gerado lá na Vercel
+      imageUrl: '/barberpro-preview.png', // Lembre-se de colocar um print bem bonito do dashboard na pasta public do seu portfólio
+    }
   ],
   en: [
     {
@@ -186,6 +203,22 @@ export const projectsData = {
       githubUrl: '#',
       liveUrl: 'https://tl-estetica-landing.vercel.app/',
       imageUrl: '/thuany-lima-lp.jpg',
+    },
+    {
+      title: 'AutoApply-LinkedIn: AI-Driven Job Application Hyperautomation',
+      description: 'An advanced RPA system that automates LinkedIn applications using a 5-layer decision engine (Local Heuristics + AI). Features SQLite data persistence to prevent duplicates, bot detection bypass, and real-time notifications via Telegram API.',
+      techs: ['Python', 'Playwright', 'Gemini AI', 'SQLite', 'Stealth', 'Telegram API', 'Git'],
+      githubUrl: 'https://github.com/PabloCoder1/AutoApply-LinkedIn',
+      liveUrl: '',
+      imageUrl: '/autoapply-bot-preview.png',
+    },
+    {
+      title: 'BarberPro: SaaS and PWA for Barber Shop Management',
+      description: 'Full-stack platform designed to digitize scheduling and management of barber shops. Includes a financial dashboard, access control system (RBAC), intelligent deletion with customer redistribution, Google authentication, and mobile installation support (PWA).',
+      techs: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Prisma ORM', 'Supabase', 'NextAuth', 'Vercel'],
+      githubUrl: 'https://github.com/PabloCoder1/barber-saas', // Confirm if the repository name is this one
+      liveUrl: 'https://barber-saas-gamma.vercel.app/', // Replace with the actual link generated on Vercel
+      imageUrl: '/barberpro-preview.png', // Remember to place a nice screenshot of the dashboard in the public folder of your portfolio
     }
   ]
 
