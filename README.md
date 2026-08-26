@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+# Pablo Lima — Portfolio
 
-First, run the development server:
+**Portfólio profissional focado em desenvolvimento Full Stack, automação e soluções digitais.**
+
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel)](https://vercel.com/)
+
+### [🌐 Ver portfólio online](https://portfolio-premium-six.vercel.app)
+
+</div>
+
+---
+
+## Sobre o projeto
+
+Este repositório contém meu portfólio profissional, criado para apresentar de forma objetiva minha experiência, stack técnica e projetos desenvolvidos.
+
+A aplicação foi construída com **Next.js App Router + TypeScript**, possui suporte a múltiplos idiomas, animações, layout responsivo e uma área de contato integrada ao backend.
+
+## Principais recursos
+
+- **Interface responsiva** para desktop e dispositivos móveis.
+- **Internacionalização** com `next-intl`.
+- **Animações e microinterações** com Framer Motion.
+- Seções dedicadas a **Sobre, Skills, Experiência, Formação e Projetos**.
+- **Formulário de contato** com integração via Nodemailer.
+- **Vercel Analytics** para acompanhamento de acesso.
+- Deploy contínuo na **Vercel**.
+
+## Stack
+
+| Área | Tecnologias |
+| --- | --- |
+| Framework | Next.js 16 |
+| Front-end | React 19, TypeScript |
+| Estilização | Tailwind CSS 4 |
+| Animações | Framer Motion |
+| Internacionalização | next-intl |
+| E-mail | Nodemailer |
+| Analytics / Deploy | Vercel |
+
+## Estrutura da página
+
+O portfólio é organizado para que recrutadores e visitantes encontrem rapidamente as informações mais relevantes:
+
+1. Apresentação profissional
+2. Sobre mim
+3. Competências técnicas
+4. Experiência
+5. Formação
+6. Projetos em destaque
+7. Contato
+
+## Executando localmente
 
 ```bash
+git clone https://github.com/PabloCoder1/portfolio-premium.git
+cd portfolio-premium
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Depois, acesse `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build de produção
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+<div align="center">
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Contato
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+[LinkedIn](https://www.linkedin.com/in/pablo-lima-aaba02269/) · [GitHub](https://github.com/PabloCoder1) · [Portfólio](https://portfolio-premium-six.vercel.app)
 
-## Deploy on Vercel
+**Pablo Lima**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+</div>
